@@ -19,7 +19,7 @@ var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {
 app.use(bodyParser.json());
 app.use(assignId)
 // setup the logger
-morganBody(app ,  { stream: accessLogStream , noColors: true});
+morganBody(app ,  { stream: accessLogStream , noColors: true , maxBodyLength: 10000});
 //app.use(morgan('combined', { stream: accessLogStream }))
 
  
